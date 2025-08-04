@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nico Lye Tesla - Portfolio</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header & Hero Section -->
+    <header id="home">
+        <nav>
+            <div class="nav-container">
+                <h2 class="logo">Nico Lye Tesla</h2>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <!-- Left: Text -->
+            <div class="hero-text">
+                <h1>Hello, I'm <span>Nico</span></h1>
+                <p>Student | Aspiring Developer | Hackathon Enthusiast</p>
+                <a href="Nico_CV.pdf" class="btn" download="Nico_CV.pdf">Download CV</a>
+            </div>
+
+            <!-- Right: Profile Image -->
+            <div class="hero-image">
+                <img src="pp.jpg" alt="Nico Lye Tesla - Profile Photo">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hi! I'm a student currently studying <strong>Software Engineering</strong> at <strong>
+                            Power Learn Project Academy</strong>.
+                        I'm passionate about coding, problem-solving, and building creative projects.
+                        This hackathon is my first step toward becoming a better developer and collaborator.
+                    </p>
+                    <p>
+                        I enjoy learning new technologies, participating in coding challenges,
+                        and working on web development projects. When I'm not coding, I love playing guitar,piano,
+                        and exploring AI innovations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5 fa-3x"></i>
+                    <h3>HTML</h3>
+                    <p>Creating semantic and accessible web structures.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt fa-3x"></i>
+                    <h3>CSS</h3>
+                    <p>Building responsive and beautiful layouts.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js fa-3x"></i>
+                    <h3>JavaScript</h3>
+                    <p>Adding interactivity to web pages (learning in progress).</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python fa-3x"></i>
+                    <h3>Python</h3>
+                    <p>Used for automation and problem-solving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+   <!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2>My Projects</h2>
+    <p class="section-subtitle">Check out some of the websites and apps I've built.</p>
+    <div class="project-grid">
+      
+      <!-- Project 1: Calculator App -->
+      <div class="project-card">
+        <h3>Calculator App</h3>
+        <img src="Mary.PNG" alt="Calculator App - Live Preview" class="project-img">
+        <a href="Mary.PNG" class="btn btn-outline" target="_blank">View Project</a>
+      </div>
+
+      <!-- Project 2: Landing Page -->
+      <div class="project-card">
+        <h3>Landing Page</h3>
+        <img src="254.PNG" alt="Landing Page - Live Preview" class="project-img">
+        <a href="254.PNG" class="btn btn-outline" target="_blank">View Project</a>
+      </div>
+
+      <!-- Project 3: Task Manager -->
+      <div class="project-card">
+        <h3>Task Manager</h3>
+        <img src="idar1.PNG" alt="Task Manager App - Live Preview" class="project-img">
+        <a href="idar1.PNG" class="btn btn-outline" target="_blank">View Project</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests">
+        <div class="container">
+            <h2>My Interests in Tech</h2>
+            <div class="interests-list">
+                <div class="interest-item">
+                    <h3>Web Development</h3>
+                    <p>I love building user-friendly websites and learning modern tools like React and Tailwind.</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Tech Innovations</h3>
+                    <p>AI, machine learning, and cloud computing excite me — I'm always exploring what's next.</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Hackathons & Collaboration</h3>
+                    <p>I enjoy solving real-world problems with creative teams and learning by doing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Have a question or want to collaborate? Fill out the form below!</p>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <p>Or reach me at: <strong>nicodemusekuwam@gmail.com</strong></p>
+                <div class="social-links">
+                    <a href="https://github.com/Ekuwam2910" target="_blank">GitHub</a> |
+                    <a href="https://www.upwork.com/freelancers/~01e29751b6cb736ed5" target="_blank">Upwork</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nico Lye Tesla. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
