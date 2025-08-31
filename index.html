@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nico Lye Tesla - Portfolio</title>
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -15,140 +16,272 @@
     <header id="home">
         <nav>
             <div class="nav-container">
-                <h2 class="logo">Nico Lye Tesla</h2>
+                <h2 class="logo">Nico</h2>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#interests">Interests</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <div class="hero">
+        <div class="hero" id="home">
+            <!-- Overlay -->
+            <div class="overlay"></div>
+
             <!-- Left: Text -->
             <div class="hero-text">
-                <h1>Hello, I'm <span>Nico</span></h1>
-                <p>Student | Aspiring Developer | Hackathon Enthusiast</p>
-                <a href="Nico_CV.pdf" class="btn" download="Nico_CV.pdf">Download CV</a>
+                <h1 class="animate-text">Hi! I am <span id="name"></span></h1>
+                <p class="animate-sub"><span id="typing"></span></p>
+                <a href="img/Nico_CV.pdf" class="btn" download="Nico_CV.pdf">Download CV</a>
             </div>
 
             <!-- Right: Profile Image -->
             <div class="hero-image">
-                <img src="pp.jpg" alt="Nico Lye Tesla - Profile Photo">
+                <!-- <img src="img/pp.jpg" alt="Nico Lye Tesla - Profile Photo"> -->
             </div>
         </div>
+
+
     </header>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Hi! I'm a student currently studying <strong>Software Engineering</strong> at <strong>
-                            Power Learn Project Academy</strong>.
-                        I'm passionate about coding, problem-solving, and building creative projects.
-                        This hackathon is my first step toward becoming a better developer and collaborator.
-                    </p>
-                    <p>
-                        I enjoy learning new technologies, participating in coding challenges,
-                        and working on web development projects. When I'm not coding, I love playing guitar,piano,
-                        and exploring AI innovations.
-                    </p>
-                </div>
+
+    <section class="about" id="about">
+        <div class="about-container">
+
+            <!-- Left: Image -->
+            <div class="about-image hidden">
+                <img src="img/pp.jpg" alt="About Nico">
             </div>
+
+            <!-- Right: Text -->
+            <div class="about-text hidden">
+                <h2>About Me</h2>
+                <p>
+                    I’m a passionate learner and aspiring developer who loves exploring the digital world.
+                    From participating in hackathons to building creative solutions, I enjoy solving
+                    problems with technology while growing my skills every day.
+                </p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+
         </div>
     </section>
+
+
     <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+
+            <!-- Row 1 -->
+            <div class="skills-row">
                 <div class="skill-card">
-                    <i class="fab fa-html5 fa-3x"></i>
+                    <i class="fab fa-html5"></i>
                     <h3>HTML</h3>
-                    <p>Creating semantic and accessible web structures.</p>
+                    <p>Building structured and semantic web pages.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
+                        <span class="progress-text">90%</span>
+                    </div>
+
+
                 </div>
+
                 <div class="skill-card">
-                    <i class="fab fa-css3-alt fa-3x"></i>
+                    <i class="fab fa-css3-alt"></i>
                     <h3>CSS</h3>
-                    <p>Building responsive and beautiful layouts.</p>
+                    <p>Styling websites with modern layouts and animations.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                        <span class="progress-text">75%</span>
+                    </div>
+
+
                 </div>
+
                 <div class="skill-card">
-                    <i class="fab fa-js fa-3x"></i>
+                    <i class="fab fa-js-square"></i>
                     <h3>JavaScript</h3>
-                    <p>Adding interactivity to web pages (learning in progress).</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-python fa-3x"></i>
-                    <h3>Python</h3>
-                    <p>Used for automation and problem-solving.</p>
+                    <p>Adding interactivity and functionality to web apps.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%"></div>
+                        <span class="progress-text">50%</span>
+                    </div>
+
+
                 </div>
             </div>
+
+            <!-- Row 2 -->
+            <div class="skills-row">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Developing scripts, automation, and backend services.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                        <span class="progress-text">70%</span>
+                    </div>
+
+
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                    <p>Designing and managing relational databases.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                        <span class="progress-text">85%</span>
+                    </div>
+
+
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-wordpress"></i>
+                    <h3>WordPress</h3>
+                    <p>Creating and customizing dynamic websites.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                        <span class="progress-text">80%</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="timeline-content">
+                    <h3>Ongoing Learning (Power Learn Project Academy)</h3>
+                    <span class="timeline-date">July 2025 - Present</span>
+                    <p>Specialized in software development, databases, and modern web technologies.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="timeline-content">
+                    <h3>Eldoret National Polytechnic</h3>
+                    <span class="timeline-date"> Jan 2024 - Nov 2024</span>
+                    <p>Computing and Informatics; Specialized in Website Development Level 1</p>
+                </div>
+            </div>
+
+
+            <!-- Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="timeline-content">
+                    <h3>Advanced Track Learning Lions - Learning Lions ICT campus</h3>
+                    <span class="timeline-date">2021 - 2022</span>
+                    <p>Advanced Website development technologies, HTML, CSS and JavaScript</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                <div class="timeline-content">
+                    <h3>Basic Training - Learning Lions ICT campus</h3>
+                    <span class="timeline-date">Jan 2020 - March 2020</span>
+                    <p>Digital Literacy and Leadership Skills</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <span class="timeline-date">2013 - 2017</span>
+                    <p>Completed High education with strong focus on science and mathematics.</p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>Primary School</h3>
+                    <span class="timeline-date">2005 - 2013</span>
+                    <p>Completed primary education with strong focus on science and mathematics.</p>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 
     <!-- Projects Section -->
-   <!-- Projects Section -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2>My Projects</h2>
-    <p class="section-subtitle">Check out some of the websites and apps I've built.</p>
-    <div class="project-grid">
-      
-      <!-- Project 1: Childrens Home Project -->
-      <div class="project-card">
-        <h3>Marias Children Home</h3>
-        <img src="Mary.PNG" alt="Calculator App - Live Preview" class="project-img">
-        <a href="Mary.PNG" class="btn btn-outline" target="_blank">View Project</a>
-      </div>
-
-      <!-- Project 2: 254 House Project -->
-      <div class="project-card">
-        <h3>254 GHOUST HOUSE</h3>
-        <img src="254.PNG" alt="Landing Page - Live Preview" class="project-img">
-        <a href="254.PNG" class="btn btn-outline" target="_blank">View Project</a>
-      </div>
-
-      <!-- Project 3: Security Group  -->
-      <div class="project-card">
-        <h3>IDAR SECURITY</h3>
-        <img src="idar1.PNG" alt="Task Manager App - Live Preview" class="project-img">
-        <a href="idar1.PNG" class="btn btn-outline" target="_blank">View Project</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Interests Section -->
-    <section id="interests" class="interests">
+    <section id="projects" class="projects">
         <div class="container">
-            <h2>My Interests in Tech</h2>
-            <div class="interests-list">
-                <div class="interest-item">
-                    <h3>Web Development</h3>
-                    <p>I love building user-friendly websites and learning modern tools like React and Tailwind.</p>
+            <h2>My Projects</h2>
+            <p class="section-subtitle">Check out some of the websites and apps I've built.</p>
+            <div class="project-grid">
+
+                <!-- Project 1: Childrens Home Project -->
+                <div class="project-card">
+                    <h3>MARIA'S CHIDRENS HOME</h3>
+                    <img src="img/Mary.PNG" alt="Calculator App - Live Preview" class="project-img">
+                    <a href="img/Mary.PNG" class="btn btn-outline" target="_blank">View Project</a>
                 </div>
-                <div class="interest-item">
-                    <h3>Tech Innovations</h3>
-                    <p>AI, machine learning, and cloud computing excite me — I'm always exploring what's next.</p>
+
+                <!-- Project 2: 254 House Project -->
+                <div class="project-card">
+                    <h3>254 GHOUST HOUSE</h3>
+                    <img src="img/254.PNG" alt="Landing Page - Live Preview" class="project-img">
+                    <a href="img/254.PNG" class="btn btn-outline" target="_blank">View Project</a>
                 </div>
-                <div class="interest-item">
-                    <h3>Hackathons & Collaboration</h3>
-                    <p>I enjoy solving real-world problems with creative teams and learning by doing.</p>
+
+                <!-- Project 3: Security Group  -->
+                <div class="project-card">
+                    <h3>IDAR SECURITY</h3>
+                    <img src="img/idar1.PNG" alt="Task Manager App - Live Preview" class="project-img">
+                    <a href="img/idar1.PNG" class="btn btn-outline" target="_blank">View Project</a>
                 </div>
+                <!-- Project 4: Security Group  -->
+                <div class="project-card">
+                    <h3>EUREKA CLINIC</h3>
+                    <img src="img/etu.PNG" alt="Task Manager App - Live Preview" class="project-img">
+                    <a href="img/etu.PNG" class="btn btn-outline" target="_blank">View Project</a>
+                </div>
+                <!-- Project 5: Security Group  -->
+                <div class="project-card">
+                    <h3>EUREKA CLINIC</h3>
+                    <img src="img/Eureka.PNG" alt="Task Manager App - Live Preview" class="project-img">
+                    <a href="img/Eureka.PNG" class="btn btn-outline" target="_blank">View Project</a>
+                </div>
+                <!-- Project 6: Security Group  -->
+                <div class="project-card">
+                    <h3>MARIAN</h3>
+                    <img src="img/Marian.PNG" alt="Task Manager App - Live Preview" class="project-img">
+                    <a href="img/Marian.PNG" class="btn btn-outline" target="_blank">View Project</a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" id="contact">
         <div class="container">
             <h2>Contact Me</h2>
             <p>Have a question or want to collaborate? Fill out the form below!</p>
@@ -186,6 +319,8 @@
     <footer>
         <p>&copy; 2025 Nico Lye Tesla. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
