@@ -905,3 +905,45 @@ footer {
     margin-top: 15px;
   }
 }
+/* Floating effect */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* ... your other code above ... */
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; }
+
+  .hero-image img {
+    width: 180px;
+    margin-top: 15px;
+  }
+
+  /* 🔹 Fix for typing text */
+  #typing,
+  #name {
+    font-size: 1.5rem;
+    white-space: normal;
+    overflow: visible;
+    display: block;
+    border-right: none; /* optional */
+  }
+}
+
