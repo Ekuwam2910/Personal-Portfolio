@@ -936,22 +936,6 @@ footer {
     margin-top: 15px;
   }
 
-  /* 🔹 Fix for typing text */
-  #typing,
-  #name {
-    font-size: 1.5rem;
-    white-space: normal;
-    overflow: visible;
-    display: block;
-    border-right: none; /* optional */
-  }
-}
-@media (max-width: 768px) {
-  .hero-text {
-    max-width: 100%;   /* allow full width on mobile */
-    text-align: center;
-  }
 
-}
 
 
