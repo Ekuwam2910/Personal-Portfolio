@@ -963,7 +963,7 @@ footer {
 /* Mobile Fix for Hero Text */
 @media (max-width: 768px) {
   .hero-text {
-    max-width: 100%;   /* full width on mobile */
+    max-width: 100%;
     text-align: center;
   }
 
@@ -972,11 +972,6 @@ footer {
     line-height: 1.4;
     white-space: normal;
     overflow: visible;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    line-height: 1.4;
   }
 
   #name,
@@ -988,6 +983,7 @@ footer {
     border-right: none;   /* remove cursor if it looks odd */
   }
 }
+
 /* Prevent unwanted horizontal scroll */
 html, body {
   overflow-x: hidden;
