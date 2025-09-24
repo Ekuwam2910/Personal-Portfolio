@@ -1,4 +1,7 @@
 /* Reset & Base Styles */
+html, body {
+  overflow-x: hidden;
+}
 * {
     margin: 0;
     padding: 0;
@@ -966,6 +969,15 @@ footer {
     overflow: visible;    /* show full text */
     display: inline-block;
     border-right: none;   /* remove cursor if it looks odd */
+  }
+}
+@media (max-width: 768px) {
+  #typing {
+    font-size: 1rem;       /* smaller text on mobile */
+    white-space: normal;   /* allow wrapping */
+    overflow: visible;     /* show full text */
+    display: block;
+    line-height: 1.4;
   }
 }
 
