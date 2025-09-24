@@ -1,147 +1,140 @@
-const desktopPhrases = [
-    "Software Developer | Digital Literacy Facilitator | Cohort Lead",     
-    "Image Annotator | Tech Explorer | Problem Solver",
-    "AI Prompt Engineer | Creative Thinker | Lifelong Learner"
-];
-const mobilePhrases = [
-  "Software Developer",     
-  "Digital Facilitator",
-  "AI Prompt Engineer"
+// Typing effect for role phrases
+const phrases = [
+  "Software Developer | Digital Literacy Facilitator | Cohort Lead",
+  "Image Annotator | Tech Explorer | Problem Solver",
+  "AI Prompt Engineer | Creative Thinker | Lifelong Learner"
 ];
 
-const phrases = window.innerWidth <= 768 ? mobilePhrases : desktopPhrases;
-
-let i = 0; // phrase index
-let j = 0; // letter index
+let phraseIndex = 0;
+let letterIndex = 0;
 let currentPhrase = [];
 let isDeleting = false;
-let isEnd = false;
 
-function loop() {
-    isEnd = false;
-    const typing = document.getElementById('typing');
+function loopPhrases() {
+  const typing = document.getElementById("typing");
 
-    typing.innerHTML = currentPhrase.join('');
+  if (phraseIndex >= phrases.length) phraseIndex = 0;
 
-    if (i < phrases.length) {
-        if (!isDeleting && j <= phrases[i].length) {
-            currentPhrase.push(phrases[i][j]);
-            j++;
-            typing.innerHTML = currentPhrase.join('');
-        }
+  typing.innerHTML = currentPhrase.join("");
 
-        if (isDeleting && j <= phrases[i].length) {
-            currentPhrase.pop();
-            j--;
-            typing.innerHTML = currentPhrase.join('');
-        }
+  if (!isDeleting && letterIndex < phrases[phraseIndex].length) {
+    currentPhrase.push(phrases[phraseIndex][letterIndex]);
+    letterIndex++;
+  } else if (isDeleting && letterIndex > 0) {
+    currentPhrase.pop();
+    letterIndex--;
+  }
 
-        if (j === phrases[i].length) {
-            isEnd = true;
-            isDeleting = true;
-            setTimeout(loop, 2000); // pause before deleting
-            return;
-        }
+  if (letterIndex === phrases[phraseIndex].length) {
+    isDeleting = true;
+    setTimeout(loopPhrases, 2000); // pause before deleting
+    return;
+  }
 
-        if (isDeleting && j === 0) {
-            currentPhrase = [];
-            isDeleting = false;
-            i++;
-            if (i === phrases.length) {
-                i = 0;
-            }
-        }
-    }
+  if (isDeleting && letterIndex === 0) {
+    isDeleting = false;
+    phraseIndex++;
+    currentPhrase = [];
+  }
 
-    const speed = isEnd ? 200 : isDeleting ? 50 : 100;
-    setTimeout(loop, speed);
+  const speed = isDeleting ? 50 : 100;
+  setTimeout(loopPhrases, speed);
 }
 
-loop();
+loopPhrases();
 
+// Typing effect for Name
 
-// Typing effect for name
 const names = ["Nicodemus", "Ekuwam", "Namaya"];
 let nameIndex = 0;
-let letterIndex = 0;
+let nameLetterIndex = 0;
 let currentName = [];
-let isDeletingName = false;
-let isEndName = false;
+let deletingName = false;
 
-function typeName() {
-    isEndName = false;
-    const nameSpan = document.getElementById("name");
-    nameSpan.innerHTML = currentName.join('');
+function loopNames() {
+  const nameSpan = document.getElementById("name");
 
-    if (!isDeletingName && letterIndex <= names[nameIndex].length) {
-        currentName.push(names[nameIndex][letterIndex]);
-        letterIndex++;
-        nameSpan.innerHTML = currentName.join('');
-    }
+  if (nameIndex >= names.length) nameIndex = 0;
 
-    if (isDeletingName && letterIndex <= names[nameIndex].length) {
-        currentName.pop();
-        letterIndex--;
-        nameSpan.innerHTML = currentName.join('');
-    }
+  nameSpan.innerHTML = currentName.join("");
 
-    if (letterIndex === names[nameIndex].length) {
-        isEndName = true;
-        isDeletingName = true;
-        setTimeout(typeName, 1500); // pause before deleting
-        return;
-    }
+  if (!deletingName && nameLetterIndex < names[nameIndex].length) {
+    currentName.push(names[nameIndex][nameLetterIndex]);
+    nameLetterIndex++;
+  } else if (deletingName && nameLetterIndex > 0) {
+    currentName.pop();
+    nameLetterIndex--;
+  }
 
-    if (isDeletingName && letterIndex === 0) {
-        currentName = [];
-        isDeletingName = false;
-        nameIndex++;
-        if (nameIndex === names.length) {
-            nameIndex = 0;
-        }
-    }
+  if (nameLetterIndex === names[nameIndex].length) {
+    deletingName = true;
+    setTimeout(loopNames, 1500);
+    return;
+  }
 
-    const speed = isEndName ? 200 : isDeletingName ? 50 : 120;
-    setTimeout(typeName, speed);
+  if (deletingName && nameLetterIndex === 0) {
+    deletingName = false;
+    nameIndex++;
+    currentName = [];
+  }
+
+  const speed = deletingName ? 50 : 120;
+  setTimeout(loopNames, speed);
 }
 
-typeName();
+loopNames();
+
+
 
 // Scroll-triggered reveal
-const hiddenElements = document.querySelectorAll('.hidden');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            // Uncomment below if you want animation to run only once
-            // observer.unobserve(entry.target);
-        }
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // run once
+      }
     });
-}, { threshold: 0.2 }); // Trigger when 20% of section is visible
+  },
+  { threshold: 0.2 }
+);
 
-hiddenElements.forEach(el => observer.observe(el));
+hiddenElements.forEach((el) => revealObserver.observe(el));
 
-// Animate skill progress bars on scroll
-const progressBars = document.querySelectorAll('.progress');
 
-const progressObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const width = entry.target.style.width;
-      entry.target.style.width = 0; // reset
-      setTimeout(() => {
-        entry.target.style.width = width; // animate fill
-      }, 100);
-      progressObserver.unobserve(entry.target); // run once
-    }
-  });
-}, { threshold: 0.3 });
 
-progressBars.forEach(bar => progressObserver.observe(bar));
+// Animate skill progress bars
 
-// Toggle mobile nav
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  document.getElementById("nav-links").classList.toggle("show");
+const progressBars = document.querySelectorAll(".progress");
+
+const barObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const width = target.getAttribute("data-width");
+        target.style.width = width;
+        observer.unobserve(target); // animate only once
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+progressBars.forEach((bar) => {
+  const width = bar.style.width;
+  bar.setAttribute("data-width", width);
+  bar.style.width = 0; // reset before animation
+  barObserver.observe(bar);
 });
 
+// Mobile Nav Toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
