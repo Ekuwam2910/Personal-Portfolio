@@ -952,14 +952,6 @@ footer {
     text-align: center;
   }
 
-  #typing,
-  #name {
-    font-size: 1.5rem; /* scale text down */
-    white-space: normal; /* allow wrapping */
-    overflow: visible;   /* prevent hiding */
-    display: inline-block;
-    border-right: none;  /* optional - typing cursor off on mobile */
-  }
 }
 
 
