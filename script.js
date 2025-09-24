@@ -132,3 +132,8 @@ const progressObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 progressBars.forEach(bar => progressObserver.observe(bar));
+
+document.addEventListener("DOMContentLoaded", () => {
+    loop(); // start typing effect after DOM is ready
+});
+
