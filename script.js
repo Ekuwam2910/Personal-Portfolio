@@ -1,8 +1,15 @@
-const phrases = [
+const desktopPhrases = [
     "Software Developer | Digital Literacy Facilitator | Cohort Lead",     
     "Image Annotator | Tech Explorer | Problem Solver",
     "AI Prompt Engineer | Creative Thinker | Lifelong Learner"
 ];
+const mobilePhrases = [
+  "Software Developer",     
+  "Digital Facilitator",
+  "AI Prompt Engineer"
+];
+
+const phrases = window.innerWidth <= 768 ? mobilePhrases : desktopPhrases;
 
 let i = 0; // phrase index
 let j = 0; // letter index
