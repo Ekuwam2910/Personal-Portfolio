@@ -968,8 +968,10 @@ footer {
   }
 
   .hero-text h1 {
-    font-size: 1.8rem; /* shrink headline */
-    line-height: 1.4;  /* add breathing space */
+    font-size: 1.6rem;
+    line-height: 1.4;
+    white-space: normal;
+    overflow: visible;
   }
 
   .hero-text p {
@@ -979,12 +981,18 @@ footer {
 
   #name,
   #typing {
-    white-space: normal;  /* allow wrapping */
-    overflow: visible;    /* don’t clip text */
-    border-right: none;   /* optional: remove cursor if wrapping looks odd */
+    font-size: 1.4rem;
+    white-space: normal;  /* let it break into new lines */
+    overflow: visible;    /* show full text */
     display: inline-block;
+    border-right: none;   /* remove cursor if it looks odd */
   }
 }
+/* Prevent unwanted horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
 
 
 
