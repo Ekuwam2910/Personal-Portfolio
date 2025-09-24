@@ -20,7 +20,16 @@ body {
     padding: 60px 0;
 }
 
-/* Default nav */
+/* Navbar default */
+nav {
+  background: #111;   /* change this to your desired color (#111 = dark, #fff = white) */
+  position: fixed;    /* keep it always at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -28,50 +37,24 @@ body {
   padding: 15px 30px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+/* Adjust hero to not go under fixed nav */
+.hero {
+  margin-top: 80px;  /* prevents content from hiding behind navbar */
 }
 
+/* Links */
 .nav-links li a {
+  color: #fff;  /* if dark navbar → white text */
   text-decoration: none;
-  color: #fff;  /* white since it's over hero bg */
   font-weight: 500;
 }
 
-/* Hamburger icon */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #fff; /* white so it's visible on dark overlay */
-}
-
-/* Mobile */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    top: 60px;   /* under nav */
-    right: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    padding: 20px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
+    background: #111;  /* same background for dropdown */
   }
 }
+
 
 /* Hero Section */
 .hero {
