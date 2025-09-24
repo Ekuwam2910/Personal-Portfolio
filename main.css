@@ -877,3 +877,31 @@ footer {
         font-size: 0.95rem;
     }
 }
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* stack text + image */
+    text-align: center;
+    padding: 20px;
+    height: auto; /* allow content to grow naturally */
+  }
+
+  .hero-text {
+    max-width: 100%; /* take full width on mobile */
+    margin-bottom: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem; /* adjust font size */
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    width: 180px; /* smaller profile image */
+    margin-top: 15px;
+  }
+}
