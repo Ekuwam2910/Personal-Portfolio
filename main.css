@@ -960,6 +960,32 @@ footer {
     border-right: none;  /* optional - typing cursor off on mobile */
   }
 }
+/* Mobile Fix for Hero Text */
+@media (max-width: 768px) {
+  .hero-text {
+    max-width: 100%;   /* full width on mobile */
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem; /* shrink headline */
+    line-height: 1.4;  /* add breathing space */
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  #name,
+  #typing {
+    white-space: normal;  /* allow wrapping */
+    overflow: visible;    /* don’t clip text */
+    border-right: none;   /* optional: remove cursor if wrapping looks odd */
+    display: inline-block;
+  }
+}
+
 
 
 
