@@ -140,3 +140,8 @@ const progressObserver = new IntersectionObserver((entries) => {
 
 progressBars.forEach(bar => progressObserver.observe(bar));
 
+// Toggle mobile nav
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("nav-links").classList.toggle("show");
+});
+
